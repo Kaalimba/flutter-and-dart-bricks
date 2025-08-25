@@ -1,3 +1,3 @@
-class {{feature_name.pascalCase()}}Repository {
+abstract class {{feature_name.pascalCase()}}Repository {
   // Add your repository methods here
 }
