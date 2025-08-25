@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:{{package_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/cubits/{{feature_name.pascalCase()}}State.dart';
-import 'package:{{package_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/repositories/{{feature_name.pascalCase()}}Repository.dart';
+import 'package:{{package_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/cubits/{{feature_name.snakeCase()}}_state.dart';
+import 'package:{{package_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/repositories/{{feature_name.snakeCase()}}_repository.dart';
 
 class {{feature_name.pascalCase()}}Cubit extends Cubit<{{feature_name.pascalCase()}}State> {
   {{feature_name.pascalCase()}}Cubit({
