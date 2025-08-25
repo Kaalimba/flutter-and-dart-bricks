@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class {{feature_name.pascalCase()}}State extends Equatable {
-  const LoginState();
+  const {{eature_name.pascalCase()}}State();
 
   // Add your state's attributes here
 
