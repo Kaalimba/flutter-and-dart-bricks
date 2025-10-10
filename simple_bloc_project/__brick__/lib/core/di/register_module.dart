@@ -1,7 +1,6 @@
 import 'package:{{app_name.snakeCase()}}/core/env.dart';
 import 'package:{{app_name.snakeCase()}}/core/network/header_extras_interceptor.dart';
 import 'package:{{app_name.snakeCase()}}/core/network/token_interceptor.dart';
-import 'package:currency_formatter/currency_formatter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
@@ -37,7 +36,7 @@ abstract class RegisterModule {
 
   @lazySingleton
   FlutterSecureStorage get flutterSecureStorage {
-    const secureStorageName = '{{appName.snakeCase()}}_secure_storage';
+    const secureStorageName = '_secure_storage';
     return const FlutterSecureStorage(
       aOptions: AndroidOptions(
         encryptedSharedPreferences: true,

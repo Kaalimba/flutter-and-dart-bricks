@@ -9,7 +9,7 @@ final appRouterConfig = GoRouter(
   routes: $appRoutes,
   navigatorKey: rootNavigatorKey,
   debugLogDiagnostics: kDebugMode,
-  initialLocation: const AuthRoute().location,
+  initialLocation: const InitialRoute().location,
 );
 
 /*
