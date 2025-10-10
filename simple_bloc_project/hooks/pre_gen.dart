@@ -20,4 +20,7 @@ void run(HookContext context) async {
   ]);
 
   progress.complete();*/
+
+  // Display the current directory path
+  context.logger.info('Current directory: ${Directory.current.path}');
 }
