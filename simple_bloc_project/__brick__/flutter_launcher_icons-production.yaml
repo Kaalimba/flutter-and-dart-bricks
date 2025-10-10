@@ -1,0 +1,10 @@
+# flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/logos/ios-icon.png"
+
+  android: false
+
+  ios: false
+  remove_alpha_ios: true
+  desaturate_tinted_to_grayscale_ios: true
+  background_color_ios: "#5A189A"
