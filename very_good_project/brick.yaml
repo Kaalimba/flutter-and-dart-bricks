@@ -26,8 +26,20 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  name:
+  app_name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: The name of your project
+    default: my_app
+    prompt: What is the name of your project?
+
+  app_description:
+    type: string
+    description: A short description of your project
+    default: A new Flutter project with BLoC architecture
+    prompt: Please provide a short description of your project
+
+  app_identifier:
+    type: string
+    description: The identifier (package name/bundle ID) of your project
+    default: com.example.my_app
+    prompt: What is the identifier of your project?
