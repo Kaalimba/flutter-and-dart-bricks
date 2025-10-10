@@ -1,4 +1,4 @@
-name: simple_bloc_project
+name: very_good_project
 description: A new brick created with the Mason CLI.
 
 # The following defines the brick repository url.
@@ -26,8 +26,8 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  app_name:
+  name:
     type: string
-    description: The name of your project
-    default: my_app
-    prompt: What is the name of your project?
+    description: Your name
+    default: Dash
+    prompt: What is your name?

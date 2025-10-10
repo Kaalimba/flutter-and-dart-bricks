@@ -819,6 +819,9 @@
       <excludeFolder url="file://$MODULE_DIR$/simple_bloc_project/hooks/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/simple_bloc_project/hooks/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/simple_bloc_project/hooks/build" />
+      <excludeFolder url="file://$MODULE_DIR$/very_good_project/hooks/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/very_good_project/hooks/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/very_good_project/hooks/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
