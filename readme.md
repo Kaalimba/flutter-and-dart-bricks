@@ -24,7 +24,7 @@ If you are using FVM you should run the following commands:
 - Ensure ~/.pub-cache/bin is on your PATH.
 
 ## Usage
-Take a look on https://docs.brickhub.dev/mason-make to learn how to use the `mason init` and `mason make` commands.
+Take a look on https://docs.brickhub.dev/mason-make to learn how to use the `mason init`, `mason get` and `mason make` commands.
 These bricks are meant to be used in combination with very_good_core brick:
 ```bash
 mason add very_good_core
