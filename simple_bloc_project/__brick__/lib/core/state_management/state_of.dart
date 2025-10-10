@@ -1,38 +1,34 @@
 import 'package:equatable/equatable.dart';
 
-enum Status {
-  initial,
-  loading,
-  success,
-  failure;
-
-  bool get isInitial => this == Status.initial;
-
-  bool get isLoading => this == Status.loading;
-
-  bool get isSuccess => this == Status.success;
-
-  bool get isFailure => this == Status.failure;
-}
+enum Status { initial, loading, success, failure }
 
 class StateOf<T> with EquatableMixin {
   const StateOf({
     required this.value,
     this.status = Status.initial,
     this.message = '',
-    this.previous,
   });
 
-  const StateOf.success({
+  const StateOf.initial({
     required this.value,
-    this.previous,
-  }) : status = Status.success,
+  }) : status = Status.initial,
        message = '';
+
+  factory StateOf.fromJson({
+    required Map<String, dynamic>? json,
+    T Function(dynamic value)? decoder,
+  }) {
+    json ??= {};
+    return StateOf<T>(
+      value: decoder?.call(json['value']) ?? (json['value'] as T),
+      status: Status.values[json['status'] as int],
+      message: json['message'] as String,
+    );
+  }
 
   final T value;
   final Status status;
   final String message;
-  final StateOf<T>? previous;
 
   StateOf<T> copyWith({
     T? value,
@@ -43,7 +39,6 @@ class StateOf<T> with EquatableMixin {
       value: value ?? this.value,
       status: status ?? this.status,
       message: message ?? this.message,
-      previous: this,
     );
   }
 
@@ -68,7 +63,7 @@ class StateOf<T> with EquatableMixin {
     );
   }
 
-  StateOf<T> toError(String message, [T? value]) {
+  StateOf<T> toFailure(String message, [T? value]) {
     return copyWith(
       status: Status.failure,
       message: message,
@@ -76,14 +71,24 @@ class StateOf<T> with EquatableMixin {
     );
   }
 
-  bool get isInitial => status.isInitial;
+  Map<String, dynamic> toJson<V>({
+    V Function(T value)? encoder,
+  }) {
+    return {
+      'value': encoder?.call(value) ?? value,
+      'status': status.index,
+      'message': message,
+    };
+  }
 
-  bool get isLoading => status.isLoading;
+  bool get isInitial => status == Status.initial;
 
-  bool get isSuccess => status.isSuccess;
+  bool get isLoading => status == Status.loading;
 
-  bool get isFailure => status.isFailure;
+  bool get isSuccess => status == Status.success;
+
+  bool get isFailure => status == Status.failure;
 
   @override
-  List<Object?> get props => [value, status, message, previous];
+  List<Object?> get props => [value, status, message];
 }

@@ -1,5 +1,32 @@
-import 'package:{{project_name.snakeCase()}}/core/state_management/state_of.dart';
+import 'package:{{app_name.snakeCase()}}/core/state_management/state_of.dart';
 import 'package:flutter/material.dart';
+
+extension StatusExtension on Status {
+  Widget when({
+    Widget Function()? initial,
+    Widget Function()? loading,
+    Widget Function()? success,
+    Widget Function()? failure,
+    Widget Function()? orElse,
+  }) {
+    final widget = switch (this) {
+      Status.initial => initial?.call(),
+      Status.loading => loading?.call(),
+      Status.success => success?.call(),
+      Status.failure => failure?.call(),
+    };
+
+    if (widget != null) {
+      return widget;
+    }
+
+    if (orElse != null) {
+      return orElse();
+    }
+
+    return const SizedBox.shrink();
+  }
+}
 
 extension StateOfWidgetExtension<T> on StateOf<T> {
   Widget when({
@@ -9,28 +36,12 @@ extension StateOfWidgetExtension<T> on StateOf<T> {
     Widget Function(StateOf<T> failureObject)? failure,
     Widget Function(StateOf<T> object)? orElse,
   }) {
-    if (isInitial) {
-      if (initial != null) {
-        return initial(this);
-      }
-    } else if (isLoading) {
-      if (loading != null) {
-        return loading(this);
-      }
-    } else if (isSuccess) {
-      if (success != null) {
-        return success(this);
-      }
-    } else if (isFailure) {
-      if (failure != null) {
-        return failure(this);
-      }
-    }
-
-    if (orElse != null) {
-      return orElse(this);
-    }
-
-    return const SizedBox.shrink();
+    return status.when(
+      initial: initial != null ? () => initial(this) : null,
+      loading: loading != null ? () => loading(this) : null,
+      success: success != null ? () => success(this) : null,
+      failure: failure != null ? () => failure(this) : null,
+      orElse: orElse != null ? () => orElse(this) : null,
+    );
   }
 }

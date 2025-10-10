@@ -5,6 +5,8 @@ class AppScaffold extends StatelessWidget {
     super.key,
     this.appBar,
     this.body,
+    this.floatingActionButton,
+    this.floatingActionButtonLocation,
     this.bottomNavigationBar,
     this.padding,
   });
@@ -16,6 +18,10 @@ class AppScaffold extends StatelessWidget {
   final Widget? bottomNavigationBar;
 
   final EdgeInsetsGeometry? padding;
+
+  final FloatingActionButton? floatingActionButton;
+
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +35,19 @@ class AppScaffold extends StatelessWidget {
 
           return SafeArea(
             child: Padding(
-              padding: padding ?? const EdgeInsets.all(16),
+              padding:
+                  padding ??
+                  const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 24,
+                  ),
               child: body,
             ),
           );
         },
       ),
+      floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation: floatingActionButtonLocation,
       bottomNavigationBar: bottomNavigationBar,
     );
   }
