@@ -11,7 +11,11 @@ Repository: https://github.com/Kaalimba/flutter-and-dart-bricks
 
 ## Prerequisites
 
-- Flutter SDK and Dart SDK installed on macOS.
+- Flutter SDK and Dart SDK installed on macOS (via FVM recommended)
+If you are using FVM you should run the following commands:
+    ```bash
+    fvm use stable
+    ```
 - Mason CLI:
   ```bash
   dart pub global activate mason_cli
@@ -20,7 +24,7 @@ Repository: https://github.com/Kaalimba/flutter-and-dart-bricks
 - Ensure ~/.pub-cache/bin is on your PATH.
 
 ## Usage
-Take a look on https://docs.brickhub.dev/mason-make to learn how to use the `mason make` command.
+Take a look on https://docs.brickhub.dev/mason-make to learn how to use the `mason init` and `mason make` commands.
 These bricks are meant to be used in combination with very_good_core brick:
 ```bash
 mason add very_good_core
