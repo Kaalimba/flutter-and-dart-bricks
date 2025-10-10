@@ -21,3 +21,18 @@ Repository: https://github.com/Kaalimba/flutter-and-dart-bricks
 
 ## Usage
 Take a look on https://docs.brickhub.dev/mason-make to learn how to use the `mason make` command.
+These bricks are meant to be used in combination with very_good_core brick:
+```bash
+mason add very_good_core
+mason make very_good_core
+```
+
+Then you can add the other bricks from this repo, for example:
+```bash
+mason add simple_bloc_project
+mason make simple_bloc_project
+```
+```bash
+mason add simple_bloc_feature 
+mason make simple_bloc_feature
+```
