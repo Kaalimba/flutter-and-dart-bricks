@@ -1,0 +1,7 @@
+name: simple_bloc_project_hooks
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  mason: ^0.1.1
