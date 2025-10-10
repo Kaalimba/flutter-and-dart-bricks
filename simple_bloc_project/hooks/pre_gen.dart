@@ -4,7 +4,7 @@ import 'package:mason/mason.dart';
 
 void run(HookContext context) async {
   //final appName = context.vars['app_name'] as String;
-  final appDescription = context.vars['app_description'] as String;
+  /*final appDescription = context.vars['app_description'] as String;
   final appIdentifier = context.vars['app_identifier'] as String;
 
   final progress = context.logger.progress('Creating Flutter app');
@@ -19,5 +19,5 @@ void run(HookContext context) async {
     '"$appIdentifier"',
   ]);
 
-  progress.complete();
+  progress.complete();*/
 }
